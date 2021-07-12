@@ -10,12 +10,12 @@ jobs:
     steps:
       - name: Check colours for for "grey"
         run: |
-          if grep -q grey ./colours.txt; then
+          if grep -q grey colours.txt; then
             exit 1
           fi
       - name: Check colours for for "white"
         run: |
-          if grep -q white ./colours.txt; then
+          if grep -q white colours.txt; then
             exit 1
           fi
       - name: Check colours for for "black"
