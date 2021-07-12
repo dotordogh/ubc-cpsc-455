@@ -8,6 +8,7 @@ jobs:
     env:
       working-directory: ./
     steps:
+      - uses: actions/checkout@v2
       - name: Check colours for for "grey"
         run: |
           if grep -q grey colours.txt; then
