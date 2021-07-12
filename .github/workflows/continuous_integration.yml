@@ -5,6 +5,8 @@ on: [push, pull_request]
 jobs:
   verify_colours:
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./
     steps:
       - name: Check colours for for "grey"
         run: |
