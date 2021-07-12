@@ -3,21 +3,22 @@ name: continuous integration
 on: [push, pull_request]
 
 jobs:
-  runs-on: ubuntu-latest
-  steps:
-    - name: Check colours for for "grey"
-      run: |
-        if grep -q 'grey' colours.txt; then
-          exit 1
-        fi
-    - name: Check colours for for "white"
-      run: |
-        if grep -q 'white' colours.txt; then
-          exit 1
-        fi
-    - name: Check colours for for "black"
-      run: |
-        if grep -q 'black' colours.txt; then
-          exit 1
-        fi
-  
+  verify_colours:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check colours for for "grey"
+        run: |
+          if grep -q 'grey' colours.txt; then
+            exit 1
+          fi
+      - name: Check colours for for "white"
+        run: |
+          if grep -q 'white' colours.txt; then
+            exit 1
+          fi
+      - name: Check colours for for "black"
+        run: |
+          if grep -q 'black' colours.txt; then
+            exit 1
+          fi
+
