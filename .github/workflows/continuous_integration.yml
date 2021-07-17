@@ -1,0 +1,29 @@
+name: continuous integration
+
+on: [push, pull_request]
+
+jobs:
+  verify_colours:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./
+    steps:
+      - uses: actions/checkout@v2
+      - name: Check colours for for "grey"
+        run: |
+          if grep -q grey colours.txt; then
+            echo "Grey is a shade, not a colour."
+            exit 1
+          fi
+      - name: Check colours for for "white"
+        run: |
+          if grep -q white colours.txt; then
+            echo "White is a shade, not a colour."
+            exit 1
+          fi
+      - name: Check colours for for "black"
+        run: |
+          if grep -q black colours.txt; then
+            echo "Black is a shade, not a colour."
+            exit 1
+          fi
