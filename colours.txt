@@ -4,6 +4,3 @@ orange
 green
 blue
 purple
-white
-black
-grey
